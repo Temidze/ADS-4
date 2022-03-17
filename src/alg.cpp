@@ -25,7 +25,7 @@ int countPairs3(int *arr, int len, int value) {
     int sum = 0;
     //Бинарный поиск
     for (int i = 0; i < len-1; i++) {
-        int x = i; 
+        int x = i;
         int y = len;
         int c;
         int b;
@@ -43,7 +43,7 @@ int countPairs3(int *arr, int len, int value) {
                     sum++;
                     b--;
                 }
-                break; 
+                break;
             }
         if (arr[i] + arr[c] > value)
             y = c;
