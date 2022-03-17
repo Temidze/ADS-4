@@ -10,7 +10,6 @@ int countPairs1(int *arr, int len, int value) {
   }
   return a;
 }
-
 int countPairs2(int *arr, int len, int value) {
   int a = 0;
   for (int i = 0; i < len-1; i++) {
@@ -23,5 +22,34 @@ int countPairs2(int *arr, int len, int value) {
   return a;
 }
 int countPairs3(int *arr, int len, int value) {
-  return 0;
+    int sum = 0;
+    //Бинарный поиск
+    for (int i = 0; i < len-1; i++) {
+        int x = i; 
+        int y = len;
+        int c;
+        int b;
+        while (x + 1 < y) {
+            c = (x + y) / 2;
+            if (arr[i] + arr[z] == value) {
+                sum++;
+                b = c + 1;
+                while ((arr[i] + arr[b] == value) && (b < y)) {
+                    sum++;
+                    b++;
+                }
+                b = c - 1;
+                while ((arr[i] + arr[b] == value) && (b > x)) {
+                    sum++;
+                    b--;
+                }
+                break; 
+            }
+        if (arr[i] + arr[c] > value)
+            y = c;
+        else
+            x = c;
+        }
+    }
+return sum;
 }
